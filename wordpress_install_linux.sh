@@ -1,6 +1,6 @@
-udo apt update
-sudo apt upgrade
-sudo apt install apache2
+udo apt -y update
+sudo apt -y upgrade
+sudo apt -y install apache2
 sudo ufw allow in "Apache Full"
 apache2 -v
 sudo service apache2 start
@@ -8,14 +8,14 @@ sudo systemctl enable apache2
 sudo service apache2 stop
 sudo service apache2 start
 sudo service apache2 restart 
-sudo apt install curl
+sudo apt -y install curl
 sudo ufw allow ssh
 sudo ufw allow 2222/tcp
 # Visit:  http://localhost/
 
 
 # Install MySQL & check version, start,stop & restart Apache
-sudo apt install mysql-server
+sudo apt -y install mysql-server
 sudo mysql_secure_installation
 mysql --version
 sudo service mysql start
@@ -29,18 +29,18 @@ sudo systemctl restart mysql
 sudo systemctl enable mysql
 
 # Install PHP & check version 
-sudo apt-get install software-properties-common
-sudo apt install php7.2-fpm php7.2-common php7.2-mbstring php7.2-xmlrpc php7.2-soap php7.2-gd php7.2-xml php7.2-intl php7.2-mysql php7.2-cli php7.2-zip php7.2-curl
+sudo apt-get -y  install software-properties-common
+sudo apt -y install php7.2-fpm php7.2-common php7.2-mbstring php7.2-xmlrpc php7.2-soap php7.2-gd php7.2-xml php7.2-intl php7.2-mysql php7.2-cli php7.2-zip php7.2-curl
 php --version
 
 
 # Install PHPmyAdmin
-sudo apt update 
-sudo apt upgrade -y
-sudo apt update 
-sudo apt install phpmyadmin 
-sudo apt install -y php-mbstring
-sudo apt-get install gettext
+sudo apt -y update 
+sudo apt -y upgrade -y
+sudo apt -y update 
+sudo apt -y install phpmyadmin 
+sudo apt -y install -y php-mbstring
+sudo apt-get -y  install gettext
 
 sudo nano /etc/apache2/apache2.conf
 # Then add the following line to the end of the file:
